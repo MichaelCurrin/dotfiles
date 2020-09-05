@@ -24,10 +24,13 @@ Name                                | Description
 [.gitignore.sh](/.gitignore.sh)     | Global git ignore file stored as `~/.gitignore`. A user-wide git ignore file which will be known to git if added to to the gitconfig as `core.excludesfile`.
 
 
+## Contributing
+
+Contributions are welcome - add a Pull Request.
+
+
 ## License
 
 Released under [MIT](/LICENSE).
 
 Please keep the license in the repo if your fork or copy a significant portion to your repo.
-
-Contributions are welcome - add Pull Request.
