@@ -10,8 +10,8 @@ Name                                | Description
 ---                                 | ---
 [.shellrc.sh](/.shellrc.sh)         | Bash config `~/.bashrc` or ZSH config `~/.zshrc`. 
 [.aliases.sh](/.aliases.sh)         | Shell aliases for Bash or ZSH. 
-[.gitconfig.toml](/.gitconfig.toml) | Global git config values stored as `~/.gitconfig`. A user-wide config known to git. See 
-[.gitignore.sh](/.gitignore.sh)     | Global git ignore file stored as `~/.gitignore`. A user-wide git ignore file which will be known to git if added to to the gitconfig as `core.excludesfile`.
+[.gitconfig.toml](/.gitconfig.toml) | Global git config values for `~/.gitconfig`. A user-wide config known to git.
+[.gitignore.sh](/.gitignore.sh)     | Global git ignore content for `~/.gitignore`. A user-wide git ignore file which will be known to git if added to to the gitconfig as `core.excludesfile`.
 
 
 ## Background
