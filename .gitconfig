@@ -1,0 +1,119 @@
+# Content for ~/.gitconfig
+
+[core]
+	editor = "nano"
+
+	# Global ignore file. Must be double quotes here to evaluate.
+	excludesfile = "~/.gitignore"
+
+[alias]
+	# NOTES
+	# You must use double quotes if using spaces, otherwise you'll get command not found.
+	# You don't need to reload your terminal - git aliases are evaluated fresh each time.
+
+	st = "status -s -b"
+
+	c = "commit"
+
+	# --all
+	# --verbose
+	br = "branch -a -v"
+
+	co = "checkout"
+	cb = "checkout -b"
+
+	# Normally `git diff` only shows unstaged changes. This will show only staged (i.e. cached)
+	# changes and uses HEAD as the default <commit> value.
+	dc = "diff --cached"
+	# Show diff of staged AND unstaged changes, relative to previous commit.
+	dh = "diff HEAD"
+	# From ZSH gds.
+	ds = "diff --staged"
+
+	###
+
+	lp = "log --pretty='%h %ci %cN %s'"
+
+	# --patch:
+	#    Generate patch i.e. diff for each commit.
+	lg = "log -p"
+
+	# --graph:
+	#     Draw a text-based graphical representation of the commit history on
+	#     the left hand side of the output.
+	# --decorate:
+	#     Print out the ref names of any commits that are shown. Defaults to
+	#     short optionm such that the name prefixes refs/heads/, refs/tags/ and
+	#     refs/remotes/ will not be printed.
+	lol = "log --graph --decorate --oneline"
+	# --all:
+	#     Pretend as if all the refs in refs/ are listed on the command line as <commit>.
+	lola = "lol --all"
+
+	# Commits for tags and feature branches only. Including date. Show on one line with colors.
+	# Note: Single quotes were needed to avoid errors of unknown revision.
+	lolt = "log --simplify-by-decoration --pretty='%C(yellow)%h %C(bold blue)%ci%C(green)%d %Creset%s'"
+
+	# Copied from my Dell:
+    # Short hash, relative date and message.
+    logd = "log --pretty='%C(yellow)%h %C(cyan)%ar %Creset%s'"
+    # Short hash, date, name and message.
+    logn = "log --pretty='%C(yellow)%h %Creset%C(cyan)%ai %C(green)%an %C(reset)%s'"
+    # Email in place of name.
+    loge = "log --pretty='%C(yellow)%h %Creset%C(cyan)%ai %C(green)%ae %C(reset)%s'"
+
+	###
+
+	# Show information about files in the index and the working tree
+	ls = "ls-files"
+	# Show files ignored by git.
+	ign = "ls-files -o -i --exclude-standard"
+
+	# Cleanup deleted remote branches.
+	# Removes REMOTE branch refs which no longer exist on origin. Does not affect local branches.
+	# It's best to do `git fetch` before this to ensure your origin is up to date.
+	# Don't confuse with `git prune` - "Prune all unreachable objects from the object database."
+	pr = "remote prune origin"
+
+	# Return git project root.
+	root = "rev-parse --show-toplevel"
+	# Go to root.
+	# Based on grt for ZSH but added as a git alias.
+	grt="! cd $(git rev-parse --show-toplevel)"
+
+	# Allow git commands from root.
+	# Git runs shell commands from root, this means you can do `git exec make` from anywhere for example.
+	exec = "!exec "
+
+	# Show all git aliases.
+	# First part outputs lines as 'alias.KEY VALUE' and the second part cleans it as sets it as "KEY = VALUE".
+	alias = "! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /"
+
+  # Force push only if you have remote work locally.
+	# This is -F and is safer than -f.
+	# See also: alias | grep force
+	pushf = "push --force-with-lease"
+
+	sync = "! git pull --rebase && git push"
+	sync-tags = "! git fetch --tags && git push --tags"
+	stash-sync = "! git stash && git sync && git stash pop"
+		sync-all = "! git pull --rebase && git push --progress && git push --tags"
+
+	# View tags sorted by version number - newest first. Based on ZSH gtv.
+	tags = "! git tag | sort -V -r"
+
+	# Show most recent tag. Based on ZSH gct
+	tag-latest = "! git describe --tags $(git rev-list --tags --max-count=1)"
+	co-tag-latest = "! git checkout $(git tag-latest)"
+
+	# Shallow clone such as to test a public repo I found. Use full HTTPS or SSH URL.
+	clone-shallow = "clone --depth 1 --single-branch"
+
+	# Undo latest commit, dropping changes. WARNING Anything else note committed will be dropped too.
+	undo = "! [ -z $(git status --porcelain) ] && git reset --hard HEAD~ || echo 'Unstaged changes!'"
+
+	# Remove uncommitted changes to versioned files
+	# - For the current directory and below.
+	# - Will not affect unversioned files - use a clean command for that.
+	# See also gpristine on ZSH but that also removes ignored files I think.
+	resetco = "! git reset HEAD && git checkout . && git status"
