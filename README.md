@@ -1,15 +1,18 @@
 # Dotfiles
 > Samples from my shell configs for Bash/ZSH and macOS/Linux
 
+
 ## Background
 
-I am a professional programmer that uses Bash and ZSH. 
+Before you see what is in the configs, let me give you an idea of what development I do on a daily basis. You'll see the configs fit into these areas.
 
-I program in Python and JavaScript and I dabble in Deno, NPM, Go, Rust, Ruby and other tools and languages. I need to make sure these are installed and configured properly.
+I am a professional programmer. I use both Bash and ZSH on both macOS and Linux laptops.
 
-I also use git and GitHub for most of my projects.
+I program in Python and JavaScript mostly, with some shell scripting to setup and run things. I dabble in Deno, NPM, Go, Rust, Ruby and other tools and languages. I need to make sure these are installed and configured properly.
 
-I love automation and shortcuts - so I have a lot of shell aliases a git alises to share.
+I use git and GitHub daily for most of my projects.
+
+I love automation and shortcuts - so I have a lot of shell aliases and git aliases to share.
 
 
 ## Configs
