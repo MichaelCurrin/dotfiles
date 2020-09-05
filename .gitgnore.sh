@@ -20,20 +20,6 @@ venv
 # Vim swap file.
 .swp
 
-### Project files
-
-# Ignore by default here, but you add these use `git add -f FILE` if you do want them to be tracked.
-# The force flag is necessary override the warning given when the file matches against these.
-
-# Lockfiles - ignore by default unless I explicitly add to git.
-# This can help where the stakes are low and I don't to get messaged
-# about security vulnerabities of subdependencies.
-# This risk is that I'll get less predictable installs locally or remotely
-# without knowing previous locked version. This is okay where I match GitHub Pages as the constant environment, or it is a simple NPM app where I can check the React quickstart for example to see what others use.
-package-lock.json
-yarn.lock
-Gemfile.lock
-
 ### Notes
 
 # Temporary or private notes, as files or directories.
