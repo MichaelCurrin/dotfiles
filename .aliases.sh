@@ -193,23 +193,3 @@ alias fnf='find .  -type f -name'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
-
-### Counting
-
-# Count number of files in a directory, at all levels.
-#
-# Excluding is not simple.
-#  https://stackoverflow.com/questions/4210042/how-to-exclude-a-directory-in-find-command?rq=1
-# But this is simple:
-#   https://www.cyberciti.biz/faq/find-command-exclude-ignore-files/
-#   find ARGS ! -path "./foo" ! -path "./.bar/*"
-alias count_files='find . -type f ! -path "./.git/*" | wc -l'
-# Count of directories at current level. Useful for counting node_modules.
-# Note this is only one level deep so exclude .git dir and not .git/*.
-alias count_dirs='find . -type d -d 1 ! -path "./.git" | wc -l'
-
-# Breakdown of files in current dir level, with line counts for each.
-# Note `wc -l *` will fail on dirs so use find.
-# Not that is runs wc against each file, not the list itself.
-# Excluding .git is not needed.
-alias count_lines='wc -l $(find . -type f -d 1) | sort -hr'
