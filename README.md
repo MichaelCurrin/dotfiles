@@ -1,6 +1,8 @@
 # Dotfiles
 > Samples from my shell configs for Bash/ZSH and macOS/Linux
 
+I created this repo as content for my Dotfiles post series on [dev.to](https://dev.to). See [Part 1](https://dev.to/michaelcurrin/dotfiles-to-make-your-shell-awesome-1pa1) of the series.
+
 
 ## Configs
 
