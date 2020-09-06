@@ -83,7 +83,7 @@
 
 	# Allow git commands from root.
 	# Git runs shell commands from root, this means you can do `git exec make` from anywhere for example.
-	exec = "!exec "
+	exec = "! exec "
 
 	# Show all git aliases.
 	# First part outputs lines as 'alias.KEY VALUE' and the second part cleans it as sets it as "KEY = VALUE".
