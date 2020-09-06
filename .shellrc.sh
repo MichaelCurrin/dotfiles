@@ -106,7 +106,7 @@ export PIP_REQUIRE_VIRTUALENV=true
 #
 # For macOS Catalina - make custom brew Ruby (not the system one) and its gems available.
 if [[ "$IS_MAC" == 'true' ]]; then
-  prepend_abs_path /usr/local/opt/ruby/bin
+  prepend_path /usr/local/opt/ruby/bin
 fi
 
 # The section above will always run but skip the dir not present.
@@ -114,7 +114,7 @@ fi
 if which ruby >/dev/null && which gem >/dev/null; then
   # Full path to user-level gems like ~/.gem/ruby/X.X.X/bin .
   GEM_PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
-  prepend_abs_path "$GEM_PATH"
+  prepend_path "$GEM_PATH"
 fi
 
 # Clean-up
