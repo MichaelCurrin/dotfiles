@@ -55,12 +55,12 @@
 	lolt = "log --simplify-by-decoration --pretty='%C(yellow)%h %C(bold blue)%ci%C(green)%d %Creset%s'"
 
 	# Copied from my Dell:
-    # Short hash, relative date and message.
-    logd = "log --pretty='%C(yellow)%h %C(cyan)%ar %Creset%s'"
-    # Short hash, date, name and message.
-    logn = "log --pretty='%C(yellow)%h %Creset%C(cyan)%ai %C(green)%an %C(reset)%s'"
-    # Email in place of name.
-    loge = "log --pretty='%C(yellow)%h %Creset%C(cyan)%ai %C(green)%ae %C(reset)%s'"
+	# Short hash, relative date and message.
+	logd = "log --pretty='%C(yellow)%h %C(cyan)%ar %Creset%s'"
+	# Short hash, date, name and message.
+	logn = "log --pretty='%C(yellow)%h %Creset%C(cyan)%ai %C(green)%an %C(reset)%s'"
+	# Email in place of name.
+	loge = "log --pretty='%C(yellow)%h %Creset%C(cyan)%ai %C(green)%ae %C(reset)%s'"
 
 	###
 
@@ -89,7 +89,7 @@
 	# First part outputs lines as 'alias.KEY VALUE' and the second part cleans it as sets it as "KEY = VALUE".
 	alias = "! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /"
 
-  # Force push only if you have remote work locally.
+	# Force push only if you have remote work locally.
 	# This is -F and is safer than -f.
 	# See also: alias | grep force
 	pushf = "push --force-with-lease"
@@ -97,7 +97,7 @@
 	sync = "! git pull --rebase && git push"
 	sync-tags = "! git fetch --tags && git push --tags"
 	stash-sync = "! git stash && git sync && git stash pop"
-		sync-all = "! git pull --rebase && git push --progress && git push --tags"
+	sync-all = "! git pull --rebase && git push --progress && git push --tags"
 
 	# View tags sorted by version number - newest first. Based on ZSH gtv.
 	tags = "! git tag | sort -V -r"
@@ -105,6 +105,17 @@
 	# Show most recent tag. Based on ZSH gct
 	tag-latest = "! git describe --tags $(git rev-list --tags --max-count=1)"
 	co-tag-latest = "! git checkout $(git tag-latest)"
+
+	# Cloning helpers - first argument is repo name.
+	# Note this runs as sh so can't use `[[`.
+	# Outer double quotes is necessary.
+	# Adding cd won't persist. But `code` would.
+	clone-h = "! [ $# -ne 1 ] && echo 'Args: REPO' || git clone https://github.com/MichaelCurrin/$1.git"
+	clone-s = "! [ $# -ne 1 ] && echo 'Args: REPO' || git clone git@github.com:MichaelCurrin/$1.git"
+
+	# Expected: USERNAME/REPO_NAME
+	clone-https = "! [ $# -ne 1 ] && echo 'Args: USERNAME/REPO_NAME' || git clone https://github.com/$1git"
+	clone-ssh = "! [ $# -ne 1 ] && echo 'Args: USERNAME/REPO_NAME' || git clone https://github.com/$1.git"
 
 	# Shallow clone such as to test a public repo I found. Use full HTTPS or SSH URL.
 	clone-shallow = "clone --depth 1 --single-branch"
