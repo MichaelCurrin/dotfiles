@@ -113,8 +113,7 @@
 	clone-h = "! [ $# -ne 1 ] && echo 'Args: REPO' || git clone https://github.com/MichaelCurrin/$1.git"
 	clone-s = "! [ $# -ne 1 ] && echo 'Args: REPO' || git clone git@github.com:MichaelCurrin/$1.git"
 
-	# Expected: USERNAME/REPO_NAME
-	clone-https = "! [ $# -ne 1 ] && echo 'Args: USERNAME/REPO_NAME' || git clone https://github.com/$1git"
+	clone-https = "! [ $# -ne 1 ] && echo 'Args: USERNAME/REPO_NAME' || git clone https://github.com/$1.git"
 	clone-ssh = "! [ $# -ne 1 ] && echo 'Args: USERNAME/REPO_NAME' || git clone https://github.com/$1.git"
 
 	# Shallow clone such as to test a public repo I found. Use full HTTPS or SSH URL.
