@@ -1,12 +1,12 @@
 # Dotfiles
 > Samples from my shell configs for Bash/ZSH and macOS/Linux
 
-I created this repo as content for my Dotfiles post series on [dev.to](https://dev.to). See [Part 1](https://dev.to/michaelcurrin/dotfiles-to-make-your-shell-awesome-1pa1) of the series.
+I created this repo as content for my **Dotfiles** post series on [dev.to](https://dev.to). See [Part 1](https://dev.to/michaelcurrin/dotfiles-to-make-your-shell-awesome-1pa1) of my series.
 
 
 ## Configs
 
-Covered in this project:
+Files covered in this project:
 
 Name                                | Description
 ---                                 | ---
@@ -14,6 +14,8 @@ Name                                | Description
 [.aliases.sh](/.aliases.sh)         | Shell aliases for Bash or ZSH. 
 [.gitconfig.toml](/.gitconfig.toml) | Global git config values for `~/.gitconfig`. A user-wide config known to git.
 [.gitignore.sh](/.gitignore.sh)     | Global git ignore content for `~/.gitignore`. A user-wide git ignore file which will be known to git if added to to the gitconfig as `core.excludesfile`.
+
+BTW I named them with extensions in GitHub, in order to get proper sytanx highlighting.
 
 
 ## Background
