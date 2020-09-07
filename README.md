@@ -33,7 +33,7 @@ I love automation and shortcuts - so I have a lot of shell aliases and git alias
 
 ## Contributing
 
-Contributions are welcome - add a Pull Request.
+Contributions are welcome - add a Pull Request or create an issue.
 
 
 ## License
