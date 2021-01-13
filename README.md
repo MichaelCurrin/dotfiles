@@ -1,6 +1,11 @@
 # Dotfiles
 > Samples from my shell configs for Bash/ZSH and macOS/Linux
 
+
+[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/dot-files?include_prereleases=&sort=semver)](https://github.com/MichaelCurrin/dot-files/releases/)
+[![License - MIT](https://img.shields.io/badge/License-MIT-blue)](#license)
+
+
 I created this repo as content for my **Dotfiles** post series on [dev.to](https://dev.to). See [Part 1](https://dev.to/michaelcurrin/dotfiles-to-make-your-shell-awesome-1pa1) of my series.
 
 
@@ -38,6 +43,6 @@ Contributions are welcome - add a Pull Request or create an issue.
 
 ## License
 
-Released under [MIT](/LICENSE).
+Released under [MIT](/LICENSE) by [@MichaelCurrin](https://github.com/MichaelCurrin).
 
-Please keep the license in the repo if your fork or copy a significant portion to your repo.
+Please keep the original license in the repo as `LICENSE-source` if you fork this or copy a significant portion of this.
