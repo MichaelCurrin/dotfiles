@@ -11,7 +11,7 @@ I created this repo as content for my **Dotfiles** post series on [dev.to](https
 
 ## Configs
 
-Files covered in this project:
+Links to files in this repo:
 
 Name                                | Description
 ---                                 | ---
