@@ -1,8 +1,7 @@
 # Dotfiles
 > Samples from my shell configs for Bash/ZSH and macOS/Linux
 
-
-[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/dot-files?include_prereleases=&sort=semver)](https://github.com/MichaelCurrin/dot-files/releases/)
+[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/dotfiles?include_prereleases=&sort=semver)](https://github.com/MichaelCurrin/dotfiles/releases/)
 [![License - MIT](https://img.shields.io/badge/License-MIT-blue)](#license)
 
 
