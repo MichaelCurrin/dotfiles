@@ -89,15 +89,14 @@
 	# First part outputs lines as 'alias.KEY VALUE' and the second part cleans it as sets it as "KEY = VALUE".
 	alias = "! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /"
 
-	# Force push only if you have remote work locally.
-	# This is -F and is safer than -f.
-	# See also: alias | grep force
+	# Force push - but only if you have remote work locally.
+	# Same as "-F". Safer than the plain "-f, --force".
 	pushf = "push --force-with-lease"
 
 	sync = "! git pull --rebase && git push"
-	sync-tags = "! git fetch --tags && git push --tags"
+	sync-tags = "! git fetch --tags && git push --tags --no-verify"
 	stash-sync = "! git stash && git sync && git stash pop"
-	sync-all = "! git pull --rebase && git push --progress && git push --tags"
+	sync-all = "! git pull --rebase && git push --progress && git push --tags --no-verify"
 
 	# View tags sorted by version number - newest first. Based on ZSH gtv.
 	tags = "! git tag | sort -V -r"
@@ -127,3 +126,18 @@
 	# - Will not affect unversioned files - use a clean command for that.
 	# See also gpristine on ZSH but that also removes ignored files I think.
 	resetco = "! git reset HEAD && git checkout . && git status"
+
+[pull]
+	# New versions of git tell you to set this explicitly. Here is the default behavior. This means
+	# "git pull" does nothing more than that. You can always run "git pull --rebase" when you need to.
+	rebase = false
+
+[fetch]
+	# Deleted local references to remote branches which have been deleted.
+	# This is setup to happen when running fetch/pull, to avoid having to run it
+	# manually as "git remote prune origin".
+	prune = true
+	
+[init]
+	# Set branch for git init. GitHub uses main but git uses master.
+	defaultBranch = "main"
