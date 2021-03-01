@@ -118,10 +118,10 @@
 	# Shallow clone such as to test a public repo I found. Use full HTTPS or SSH URL.
 	clone-shallow = "clone --depth 1 --single-branch"
 
-	# Undo latest commit, dropping changes. WARNING Anything else note committed will be dropped too.
+	# Undo latest commit, dropping changes. WARNING Any unstaged changes will be dropped too.
 	undo = "! [ -z $(git status --porcelain) ] && git reset --hard HEAD~ || echo 'Unstaged changes!'"
 
-	# Remove uncommitted changes to versioned files
+	# Remove uncommitted changes to versioned files.
 	# - For the current directory and below.
 	# - Will not affect unversioned files - use a clean command for that.
 	# See also gpristine on ZSH but that also removes ignored files I think.
@@ -139,5 +139,5 @@
 	prune = true
 	
 [init]
-	# Set branch for git init. GitHub uses main but git uses master.
+	# Set branch for git init. GitHub uses main but git uses master unless you override here.
 	defaultBranch = "main"
