@@ -101,14 +101,13 @@
 		| sort \
 	"""
 
-	# Force push - but only if you have remote work locally.
-	# Same as "-F". Safer than the plain "-f, --force".
-	pushf = "push --force-with-lease"
-
 	sync = "! git pull --rebase && git push"
 	sync-tags = "! git fetch --tags && git push --tags --no-verify"
-	stash-sync = "! git stash && git sync && git stash pop"
-	sync-all = "! git pull --rebase && git push --progress && git push --tags --no-verify"
+	sync-stash = "! git stash -u && git sync && git stash pop"
+	sync-all = """! git pull --rebase \
+		&& git push --progress \
+		&& git push --tags --no-verify \
+	"""
 
 	# View tags sorted by version number - newest first. Based on ZSH gtv.
 	tags = "! git tag | sort -V -r"
@@ -165,6 +164,13 @@
 		&& git checkout . \
 		&& git status \
 	"""
+
+	### 
+	
+	pushf = "push --force-with-lease"
+		pf = "pushf --no-verify"
+	p = "push --no-verify"
+	pu = "! git push --no-verify -u origin $(git branch --show-current)"
 
 [pull]
 	# New versions of git tell you to set this explicitly. Here is the default behavior. This means
