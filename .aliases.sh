@@ -164,10 +164,12 @@ alias random_alias='{ alias & git alias ;} | shuf -n 1'
 
 ### Docker
 
+alias dc='docker-compose'
 alias dps='docker-compose ps'
 alias dstart='docker-compose start'
 alias dstop='docker-compose stop'
 alias dup='docker-compose up'
+alias dub='docker-compose up --build'
 alias ddown='docker-compose down'
 alias drestart='docker-compose restart'
 # Usage: dexec COMMAND
