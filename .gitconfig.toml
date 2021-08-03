@@ -173,22 +173,8 @@
 	pu = "! git push --no-verify -u origin $(git branch --show-current)"
 
 	# View your Conventional Commit log messages with emojis added.
-	# Note - colors will be lost going through sed.
-	emoji = """! git lol \
-		| sed 's/feat:/✨ feat:/g ; \
-			s/fix:/🐛 fix:/g ; \
-			s/build:/👷‍♂️ build:/g ; \
-			s/chore:/🧽 chore:/g ; \
-			s/ci:/🔧 ci:/g ; \
-			s/docs:/📝 docs:/g ; \
-			s/refactor:/♻️ refactor:/g ; \
-			s/perf:/⚡️ perf:/g ; \
-			s/style:/🎨 style:/g ; \
-			s/test:/✅ test:/g ; \
-			s/tag:/🔖 tag:/g ; \
-			s/Initial commit$/🎉 Initial commit/g' \
-		| less \
-	"""
+	# See https://github.com/MichaelCurrin/emoji-resources/blob/main/git-log-emoji.md
+	emoji = """"""
 
 [pull]
 	# New versions of git tell you to set this explicitly. Here is the default behavior. This means
