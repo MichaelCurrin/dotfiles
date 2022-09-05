@@ -5,15 +5,13 @@
 # OS checks
 ####
 
-IS_MAC=false
-IS_LINUX=false
-
-#   -s Print the kernel name (Linux) | print the operating system name. (macOS)
 case "$(uname -s)" in
 Darwin*)
   IS_MAC=true
+  IS_LINUX=false
   ;;
 Linux*)
+  IS_MAC=false
   IS_LINUX=true
   ;;
 esac
@@ -101,6 +99,8 @@ prepend_path ~/.local/go/bin
 #
 # Prevent accidental global installs with pip.
 export PIP_REQUIRE_VIRTUALENV=true
+# Override when needed using:
+#   PIP_REQUIRE_VIRTUALENV=false pip install PACKAGE
 
 # RUBY
 #
